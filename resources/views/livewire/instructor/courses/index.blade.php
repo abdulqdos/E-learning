@@ -1,10 +1,10 @@
 <div class="flex flex-col gap-y-10">
 
 
-    <x-layouts.admin.header :a="true" url="#" label="إضافة كورس">
+    <x-layouts.admin.header :a="true" :url="route('instructors.courses.create' , [ 'instructor' => Auth::user()->id ] ) " label="إضافة كورس">
             كورساتي
     </x-layouts.admin.header>
-    
+
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         @foreach($courses as $course)
             <div class="bg-white p-6 rounded-lg shadow-md">
@@ -32,7 +32,12 @@
                     </button>
 
                     <!-- زر عرض التفاصيل -->
-                    <a href="#" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 text-sm    ">
+                    <a href="{{ route('instructors.courses.show' ,
+                         [
+                            'course' => $course,
+                            'instructor' => $instructor,
+                        ]
+                    ) }}" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 text-sm    ">
                         عرض التفاصيل
                     </a>
                 </div>

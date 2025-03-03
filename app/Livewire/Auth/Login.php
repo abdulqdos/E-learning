@@ -35,11 +35,8 @@ class Login extends Component
             return redirect()->route('admin');
         } else if ($user->role === 'instructor')
         {
-<<<<<<< HEAD
-            return redirect()->route('instructor');
-=======
+
             return redirect()->route('instructors.index' , $user->id);
->>>>>>> 98fde8b (initial)
         }
         return redirect()->route('home');
     }

@@ -1,9 +1,6 @@
 <!doctype html>
-<<<<<<< HEAD
-<html lang="en">
-=======
+
 <html lang="ar" dir="rtl">
->>>>>>> 98fde8b (initial)
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"

@@ -27,18 +27,13 @@ class DatabaseSeeder extends Seeder
 
          Course::factory(30)->recycle($teachers)->recycle($categories)->create();
 
-<<<<<<< HEAD
-        User::factory()->create([
-=======
+
         $test = User::factory()->create([
->>>>>>> 98fde8b (initial)
             'name' => 'Test User',
             'email' => 'test@example.com',
             'profile_url' => 'default_url',
             'role' => 'instructor'
         ]);
-<<<<<<< HEAD
-=======
 
         Course::factory(4)
             ->recycle($categories)
@@ -46,6 +41,5 @@ class DatabaseSeeder extends Seeder
                 'instructor_id' => $test->id,
             ]);
 
->>>>>>> 98fde8b (initial)
     }
 }

@@ -13,19 +13,14 @@ use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 
 use App\Livewire\Instructor\Dashboard as instructorDashboard;
-<<<<<<< HEAD
-=======
 use App\Livewire\Instructor\Courses\index as instructorCourse;
->>>>>>> 98fde8b (initial)
-use Illuminate\Support\Facades\Auth;
+use App\Livewire\Instructor\Courses\Create as instructorCreateCourse;
+use App\Livewire\Instructor\Courses\Show as instructorShowCourse;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-<<<<<<< HEAD
-    return 'ok';
-=======
     return view('index');
->>>>>>> 98fde8b (initial)
 })->name('home');
 
 
@@ -57,11 +52,11 @@ Route::middleware('admin')->group(function () {
 });
 
 Route::middleware('instructor')->group(function () {
-<<<<<<< HEAD
+
     Route::get('/instructor', instructorDashboard::class)->name('instructor');
-=======
     Route::get('/instructors/{instructor}', instructorDashboard::class)->name('instructors.index');
-    Route::get('/instructors/{instructor}/courses', instructorCourse::class)->name('instructor.courses');
->>>>>>> 98fde8b (initial)
+    Route::get('/instructors/{instructor}/courses', instructorCourse::class)->name('instructors.courses');
+    Route::get('/instructors/{instructor}/courses/create', instructorCreateCourse::class)->name('instructors.courses.create');
+    Route::get('/instructors/{instructor}/courses/{course}', instructorShowCourse::class)->name('instructors.courses.show');
 
 });
